@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif; 
+}
+
+body, 
+ul  {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/***** HEADER *****/
+
+.header-container {
+    height: 100vh;
+}
+
+/* Navigation */
+
+.top-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 25px 20px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.nav-background {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.nav-item,
+.logo, 
+.btn {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.nav-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.icon {
+    display: none;
+    color: #fff;
+    font-size: 25px;
+}
+    
+.icon:hover { 
+     cursor: pointer; 
+ }
+    
+.main-nav li, 
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: 5px 15px;
+    transition: all 0.5s;
+}
+
+.btn {
+    background-color: rgba(2, 179, 228, 0.8);
+    border: 2px solid transparent;
+    margin-right: 15px;
+}
+
+.btn:hover {
+    background-color: rgba(2, 179, 228, 0.65);
+    border: 2px solid #02b3e4;
+}
+
+.nav-item {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-item:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: #02b3e4;
+    height: 2px;
+    transition: all 0.5s;
+}
+
+.nav-item:hover:after {
+    width: 100%;
+}
+
+/***** MEDIA *****/
+
+@media only screen and (max-width: 800px) {
+
+    .menu-icon {
+        display: block;
+    }
+    
+    .main-nav {
+        visibility: hidden;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 128, 163, 0.95);
+        transition-timing-function: ease-in-out;
+        transition: all 0.5s;
+    }
+    
+    .active {
+        visibility: visible;
+        height: 100vh;
+    }
+    
+    .on {
+        display: block;
+        z-index: 1;
+    }
+    
+    .off {
+        display: none;
+    }
+    
+    .main-nav li {
+        display: block;
+        padding: 15px;
+    }
+    
+    .main-nav li:first-child {
+        padding-top: 30px;
+      }
+    
+}
